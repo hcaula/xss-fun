@@ -1,0 +1,45 @@
+<style>
+    #message {
+        width: 500px;
+        height: 50px;
+    }
+
+    .area {
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+    }
+</style>
+
+<script src="script.js"></script>
+
+<h1>XSS Fun!</h1>
+<h3>
+    username:
+</h3>
+<textarea id="username"></textarea>
+<h3>
+    senha:
+</h3>
+
+<input type="password" id="password"></input>
+<button onclick="login()">Login!</button>
+
+<h2 id="hello"></h2>
+
+<div id="messages"></div>
+
+<div class="area">
+  <textarea id="message"></textarea>
+  <button onclick="submit()" id="button">Submit</button>
+</div>
+
+<script>
+  const input = document.getElementById("message");
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    if (username) submit()
+  }
+});
+</script>
